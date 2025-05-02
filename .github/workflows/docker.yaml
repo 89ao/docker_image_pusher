@@ -13,6 +13,7 @@ env:
   CNB_NAME_SPACE: "${{ secrets.CNB_NAME_SPACE }}"
   CNB_REGISTRY_USER: "${{ secrets.CNB_REGISTRY_USER }}"
   CNB_REGISTRY_PASSWORD: "${{ secrets.CNB_REGISTRY_PASSWORD }}"
+  BARK_KEY: "${{ secrets.BARK_KEY }}"
 
 jobs:
 
