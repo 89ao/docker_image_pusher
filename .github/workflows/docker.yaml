@@ -126,7 +126,13 @@ jobs:
             name_space=$(echo "$image" | awk -F'/' '{if (NF==3) print $2; else if (NF==2) print $1; else print ""}')
             # 获取镜像名例  例如nginx
             image_name=$(echo "$image_name_tag" | awk -F':' '{print $1}')
-        
+            # 如果原始镜像是 vaultwarden/server，则将目标镜像名设置为 vaultwarden
+            original_image_name_part=$(echo "$image" | awk -F':' '{print $1}') # 获取 vaultwarden/server 部分
+            if [[ "$original_image_name_part" == "vaultwarden/server" ]]; then
+                image_name="vaultwarden"
+                echo "Adjusted image_name for vaultwarden/server to: $image_name"
+            fi
+
             name_space_prefix=""
             # 如果镜像名重名
             if [[ -n "${duplicate_images[$image_name]}" ]]; then
@@ -138,6 +144,14 @@ jobs:
             
             # 将@sha256:等字符删除
             image_name_tag="${image_name_tag%%@*}"
+            # 重新组合 image_name_tag，因为 image_name 可能已更改
+            image_tag_part=$(echo "$image_name_tag" | awk -F':' '{print $2}')
+            if [[ -n "$image_tag_part" ]]; then
+                image_name_tag="${image_name}:${image_tag_part}"
+            else
+                image_name_tag="${image_name}" # 处理没有 tag 的情况，例如 latest (虽然前面处理了，但保险起见)
+            fi
+
             new_image="$ALIYUN_REGISTRY/$ALIYUN_NAME_SPACE/$platform_prefix$name_space_prefix$image_name_tag"
             echo "docker tag $image $new_image"
             docker tag $image $new_image
