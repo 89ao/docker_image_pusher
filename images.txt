@@ -7,3 +7,4 @@ ubuntu/squid
 v2fly/v2fly-core
 ghcr.io/mermaid-js/mermaid-live-editor
 ghcr.io/home-assistant/home-assistant:stable
+ --platform linux/arm64 ghcr.io/home-assistant/home-assistant:stable
