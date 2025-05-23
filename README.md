@@ -11,8 +11,8 @@ modify from 作者：**[技术爬爬虾](https://github.com/tech-shrimp/me)**<br
 ## 使用方式
 
 
-### 配置腾讯云
-登录腾讯云容器镜像服务<br>
+### 配置腾讯cnb
+登录腾讯cnb服务<br>
 https://cnb.cool/<br>
 启用个人实例，创建一个命名空间（**CNB_NAME_SPACE**）
 ![](/doc/命名空间.png)
@@ -77,5 +77,3 @@ xiaoyaliu/alist
 添加 schedule即可定时执行(此处cron使用UTC时区)
 ![](doc/定时执行.png)
 
-### 增加bark提醒
-在镜像有更新的时候给bark发个提醒，如果上游没更新就不提醒了。
