@@ -1,3 +1,4 @@
+ --platform linux/arm64 louislam/uptime-kuma:1
 vaultwarden/server
 excalidraw/excalidraw
 jgraph/drawio
@@ -9,5 +10,3 @@ v2fly/v2fly-core
 ghcr.io/mermaid-js/mermaid-live-editor
 ghcr.io/home-assistant/home-assistant:stable
  --platform linux/arm64 ghcr.io/home-assistant/home-assistant:stable
-gitlab/gitlab-ce
- --platform linux/arm64 pihole
