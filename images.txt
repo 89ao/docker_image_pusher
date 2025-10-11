@@ -11,3 +11,4 @@ ghcr.io/mermaid-js/mermaid-live-editor
 ghcr.io/home-assistant/home-assistant:stable
  --platform linux/arm64 ghcr.io/home-assistant/home-assistant:stable
 certbot/certbot
+finab/bark-server
