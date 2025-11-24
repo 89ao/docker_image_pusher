@@ -1,8 +1,8 @@
 name: Docker
 
 on:
-#  schedule:
-#    - cron: "* */8 * * *"
+  schedule:
+    - cron: "* */8 * * *"
   workflow_dispatch:
   push:
     branches: [ main ]
@@ -17,8 +17,8 @@ env:
 
 jobs:
 
-#  build:
-#    name: Pull
+  build:
+    name: Pull
     runs-on: ubuntu-latest
     steps:
     - name: Before freeing up disk space
