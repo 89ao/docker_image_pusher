@@ -11,4 +11,4 @@ ghcr.io/home-assistant/home-assistant:stable
  --platform linux/arm64 ghcr.io/home-assistant/home-assistant:stable
 certbot/certbot
 finab/bark-server
-icloudpd
+icloudpd/icloudpd:1.32.1
