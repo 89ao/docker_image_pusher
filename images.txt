@@ -1,4 +1,3 @@
- --platform linux/arm64 louislam/uptime-kuma:1
 vaultwarden/server
 excalidraw/excalidraw
 jgraph/drawio
